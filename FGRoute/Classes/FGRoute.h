@@ -7,43 +7,44 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WeexSDK.h>
 
-@interface FGRoute : NSObject
+@interface FGRoute : NSObject <WXModuleProtocol>
 
 /**
  Use this method to get @b WiFi @b Route ip address
  @return route ip address in string format
  */
-+ (NSString *)getGatewayIP;
+// + (NSString *)getGatewayIP;
 
 /**
  Use this method to get name of connected wifi
  @return connected wifi name
  */
-+ (NSString *)getSSID;
+// + (NSString *)getSSID;
 
 /**
  Use this method to get @b BSSID of connected wifi
  @return connected wifi BSSID in string format
  */
-+ (NSString *)getBSSID;
+// + (NSString *)getBSSID;
 
 /**
  Use this method to get @b SSIDDATA of connected wifi
  @return connected wifi SSIDDATA in string format
  */
-+ (NSString *)getSSIDDATA;
+// + (NSString *)getSSIDDATA;
 
 /**
  Use this method to get your device local ip address in connected wifi network
  @return local ip address in string format
  */
-+ (NSString *)getIPAddress;
+// + (NSString *)getIPAddress;
 
 /**
 
  @return @b true if wifi is connected, @b false if not
  */
-+ (BOOL)isWifiConnected;
+// + (BOOL)isWifiConnected;
 
 @end
