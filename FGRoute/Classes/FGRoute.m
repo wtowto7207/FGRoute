@@ -12,13 +12,10 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
-#import <WeexPluginLoader/WeexPluginLoader.h>
-WX_PLUGIN_EXPORT_MODULE(WifiInfo, FGRoute)
-@implementation FGRoute
-@synthesize weexInstance;
-WX_EXPORT_METHOD(@selector(getGatewayIP:))
 
-+ (NSString *)getGatewayIP:(WXModuleCallback)callback{
+@implementation FGRoute
+
++ (NSString *)getGatewayIP {
     NSString *ipString = nil;
     struct in_addr gatewayaddr;
     int r = getdefaultgateway(&(gatewayaddr.s_addr));
@@ -27,9 +24,8 @@ WX_EXPORT_METHOD(@selector(getGatewayIP:))
     } else {
         NSLog(@"Wifi is not connected or you are using simulator Gateway ip address will be nil");
     }
-    if(callback){
-        callback(ipString);
-    }
+    
+    return ipString;
     
 }
 
